@@ -8,7 +8,28 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
+    <!-- script vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+    <div id="app">
+        <div>
+            <img src="img/Logo.png" alt="logo.png">
+            <h1>Boolean TodoList</h1>
+        </div>
+        <!-- Input e pulsante Aggiungi -->
+        <div>
+          <input v-model="newTodoText" type="text" placeholder="Inserisci un nuovo todo">
+          <button @click="addTodo">Aggiungi</button>
+        </div>
+      
+        <!-- Lista dei todo -->
+        <ul>
+          <li v-for="(todo, index) in todoList" :key="todo.text" :class="{ 'done': todo.done }" @click="toggleTodoDone(index)">
+            {{ todo.text }}
+            <button id="bottonX" @click="removeTodo(index)">x</button>
+          </li>
+        </ul>
+      </div>
 
 
 
