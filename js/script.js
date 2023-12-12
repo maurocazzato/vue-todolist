@@ -52,7 +52,7 @@ var app = new Vue({
 
     // BONUS invertire il valore della proprietà 'done' di un todo
         toggleTodoDone: function(index) {
-            this.todoList(index).done = !this.todoList(index).done;
+            this.todoList[index].done = !this.todoList[index].done;
         },
     }
     // Collego new Vue all'elemento con id "app"
